@@ -288,3 +288,38 @@ header {
 .btn-citation:hover {
   background: #c4176f;
 }
+#toggle-theme {
+  background: transparent;
+  border: 0.5px solid white;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+#navbar.scrolled #toggle-theme {
+  border-color: #E91E8C;
+  color: #E91E8C;
+}
+
+body.dark {
+  background: #1a1a2e;
+  color: #eee;
+}
+
+body.dark .carte {
+  background: #16213e;
+  border-color: #0f3460;
+  color: #eee;
+}
+
+body.dark #citation-box {
+  background: #16213e;
+  color: #eee;
+}
+
+body.dark footer {
+  color: #aaa;
+}
