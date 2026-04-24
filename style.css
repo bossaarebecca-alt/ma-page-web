@@ -158,3 +158,43 @@ footer {
   font-size: 0.9rem;
   margin-top: 2rem;
 }
+
+/* Tablette — écrans moins de 768px */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  .projets .cards {
+    flex-direction: column;
+  }
+
+  .tags {
+    justify-content: center;
+  }
+}
+
+/* Mobile — écrans moins de 480px */
+@media (max-width: 480px) {
+  header {
+    padding: 2rem 1rem;
+  }
+
+  header h1 {
+    font-size: 1.2rem;
+  }
+
+  section {
+    padding: 0 1rem;
+  }
+
+  .tag {
+    font-size: 0.8rem;
+    padding: 5px 12px;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+}
