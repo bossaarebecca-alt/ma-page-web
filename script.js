@@ -47,3 +47,15 @@ function nouvelleCitation() {
 }
 
 nouvelleCitation();
+function toggleTheme() {
+  const body = document.body;
+  const bouton = document.getElementById("toggle-theme");
+
+  body.classList.toggle("dark");
+
+  if (body.classList.contains("dark")) {
+    bouton.textContent = "☀️";
+  } else {
+    bouton.textContent = "🌙";
+  }
+}
