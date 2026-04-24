@@ -11,7 +11,7 @@ body {
 }
 
 header {
-  background: #6C3FC5;
+  background: #E91E8C;
   color: white;
   padding: 3rem 2rem;
   text-align: center;
@@ -50,7 +50,7 @@ section {
 h2 {
   font-size: 1.4rem;
   margin-bottom: 1rem;
-  color: #6C3FC5;
+  color: #E91E8C;
 }
 
 .tags {
@@ -60,7 +60,7 @@ h2 {
 }
 
 .tag {
-  background: #6C3FC5;
+  background: #E91E8C;
   color: white;
   padding: 6px 16px;
   border-radius: 20px;
@@ -102,7 +102,7 @@ h2 {
 
 .btn {
   display: inline-block;
-  background: #6C3FC5;
+  background: #E91E8C;
   color: white;
   padding: 12px 28px;
   border-radius: 25px;
