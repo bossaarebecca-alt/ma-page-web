@@ -59,3 +59,35 @@ function toggleTheme() {
     bouton.textContent = "🌙";
   }
 }
+function animerBarres() {
+  const barres = document.querySelectorAll('.skill-fill');
+  barres.forEach(function(barre) {
+    const largeur = barre.getAttribute('data-width');
+    barre.style.width = largeur + '%';
+  });
+}
+
+window.addEventListener('scroll', function() {
+  const section = document.getElementById('competences');
+  const position = section.getBoundingClientRect().top;
+  if (position < window.innerHeight - 100) {
+    animerBarres();
+  }
+});
+
+function envoyerMessage() {
+  const nom = document.getElementById("nom").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const message = document.getElementById("message").value.trim();
+  const confirmation = document.getElementById("confirmation");
+
+  if (nom === "" || email === "" || message === "") {
+    alert("Merci de remplir tous les champs !");
+    return;
+  }
+
+  confirmation.style.display = "block";
+  document.getElementById("nom").value = "";
+  document.getElementById("email").value = "";
+  document.getElementById("message").value = "";
+}
