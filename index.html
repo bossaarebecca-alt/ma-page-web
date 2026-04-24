@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rebecca - Portfolio</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👩‍💻</text></svg>">
 </head>
 <body>
 
@@ -29,17 +30,56 @@
     <h2>À propos de moi</h2>
     <p>J'apprends le développement web et GitHub. Voici ma première page publiée sur internet !</p>
   </section>
-
-  <section class="competences" id="competences">
-    <h2>Mes compétences</h2>
-    <div class="tags">
-      <span class="tag">HTML</span>
-      <span class="tag">CSS</span>
-      <span class="tag">Git</span>
-      <span class="tag">GitHub</span>
-      <span class="tag">VS Code</span>
+<section class="competences" id="competences">
+  <h2>Mes compétences</h2>
+  <div class="skills-list">
+    <div class="skill-item">
+      <div class="skill-header">
+        <span>HTML</span>
+        <span>80%</span>
+      </div>
+      <div class="skill-bar">
+        <div class="skill-fill" data-width="80"></div>
+      </div>
     </div>
-  </section>
+    <div class="skill-item">
+      <div class="skill-header">
+        <span>CSS</span>
+        <span>75%</span>
+      </div>
+      <div class="skill-bar">
+        <div class="skill-fill" data-width="75"></div>
+      </div>
+    </div>
+    <div class="skill-item">
+      <div class="skill-header">
+        <span>Git & GitHub</span>
+        <span>85%</span>
+      </div>
+      <div class="skill-bar">
+        <div class="skill-fill" data-width="85"></div>
+      </div>
+    </div>
+    <div class="skill-item">
+      <div class="skill-header">
+        <span>JavaScript</span>
+        <span>60%</span>
+      </div>
+      <div class="skill-bar">
+        <div class="skill-fill" data-width="60"></div>
+      </div>
+    </div>
+    <div class="skill-item">
+      <div class="skill-header">
+        <span>VS Code</span>
+        <span>70%</span>
+      </div>
+      <div class="skill-bar">
+        <div class="skill-fill" data-width="70"></div>
+      </div>
+    </div>
+  </div>
+</section>
 
   <section class="projets" id="projets">
     <h2>Mes projets</h2>
@@ -67,19 +107,30 @@
 </section>
 
   <section class="contact" id="contact">
-    <h2>Me contacter</h2>
-    <p>Tu veux échanger ou collaborer ?</p>
-    <a href="https://github.com/bossaarebecca-alt" target="_blank" class="btn">Mon profil GitHub</a>
-     <br><br>
-  <button id="btn-message" onclick="afficherMessage()">Clique ici !</button>
-  <p id="message" style="display:none; margin-top:1rem; color:#E91E8C; font-weight:bold;">
-    Merci de visiter ma page ! 😊
-  </p>
+  <h2>Me contacter</h2>
+  <p>Tu veux échanger ou collaborer ?</p>
+  <a href="https://github.com/bossaarebecca-alt" target="_blank" class="btn">Mon profil GitHub</a>
 
-  <p id="compteur" style="margin-top:0.5rem; color:#888; font-size:0.9rem;">
-  0 clics
-</p>
-  </section>
+  <div class="form-contact">
+    <div class="form-group">
+      <label for="nom">Ton nom</label>
+      <input type="text" id="nom" placeholder="Ex: Marie Dupont">
+    </div>
+    <div class="form-group">
+      <label for="email">Ton email</label>
+      <input type="email" id="email" placeholder="Ex: marie@exemple.com">
+    </div>
+    <div class="form-group">
+      <label for="message">Ton message</label>
+      <textarea id="message" rows="4" placeholder="Bonjour Rebecca..."></textarea>
+    </div>
+    <button onclick="envoyerMessage()" class="btn-citation">Envoyer le message</button>
+    <p id="confirmation" style="display:none; margin-top:1rem; color:#27500A; font-weight:bold;">
+      Merci ! Ton message a bien été envoyé.
+    </p>
+  </div>
+</section>
+  
 
   <footer>
     <p>Fait avec passion par Rebecca — 2026</p>
