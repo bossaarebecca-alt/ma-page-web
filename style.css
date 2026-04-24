@@ -68,14 +68,26 @@ h2 {
   padding: 6px 16px;
   border-radius: 20px;
   font-size: 0.9rem;
+  transition: background 0.3s ease, color 0.3s ease;
+  cursor: pointer;
 }
 
+.tag:hover {
+  background: white;
+  color: #E91E8C;
+  border: 1px solid #E91E8C;
+}
 .carte {
   background: white;
   border: 1px solid #ddd;
   border-radius: 8px;
   padding: 1.25rem;
   margin-bottom: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.carte:hover {
+  transform: translateY(-6px);
 }
 
 .projets .cards {
@@ -122,6 +134,17 @@ h2 {
   border-radius: 25px;
   text-decoration: none;
   font-size: 0.95rem;
+}
+
+
+@keyframes pulse {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.btn {
+  animation: pulse 2s infinite;
 }
 
 .btn:hover {
