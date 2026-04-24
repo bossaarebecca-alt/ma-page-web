@@ -249,3 +249,42 @@ footer {
 header {
   padding-top: 5rem;
 }
+.citation {
+  text-align: center;
+}
+
+#citation-box {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  border-left: 4px solid #E91E8C;
+}
+
+#citation-texte {
+  font-size: 1.1rem;
+  font-style: italic;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+#citation-auteur {
+  font-size: 0.9rem;
+  color: #E91E8C;
+  font-weight: bold;
+}
+
+.btn-citation {
+  background: #E91E8C;
+  color: white;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: background 0.3s ease;
+}
+
+.btn-citation:hover {
+  background: #c4176f;
+}
