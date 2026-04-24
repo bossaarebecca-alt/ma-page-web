@@ -14,7 +14,10 @@ header {
   background: #E91E8C;
   color: white;
   padding: 3rem 2rem;
-  text-align: center;
+  text-align: flex;
+  flex-direction: colum;
+  align-items: center;
+  gap: 12px;
 }
 
 .avatar {
@@ -73,6 +76,17 @@ h2 {
   border-radius: 8px;
   padding: 1.25rem;
   margin-bottom: 1rem;
+}
+
+.projets .cards {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.projets .carte {
+  flex: 1;
+  min-width: 200px;
 }
 
 .carte h3 {
