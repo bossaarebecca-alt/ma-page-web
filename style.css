@@ -99,6 +99,7 @@ h2 {
 .projets .carte {
   flex: 1;
   min-width: 200px;
+  max-width: calc(50% - 8px);
 }
 
 .carte h3 {
