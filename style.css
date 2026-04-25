@@ -92,7 +92,7 @@ h2 {
 
 .projets .cards {
   display: grid;
-  grid-tempate-colums: repeat(2 , 1fr);
+  grid-template-colums: repeat(2 , 1fr);
   gap: 16px;
 }
 
