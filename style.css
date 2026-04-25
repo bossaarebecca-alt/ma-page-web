@@ -92,7 +92,7 @@ h2 {
 
 .projets .cards {
   display: grid;
-  grid-template-colums: repeat(2 , 1fr);
+  grid-template-columns: repeat(2 , 1fr);
   gap: 16px;
 }
 
@@ -158,14 +158,13 @@ footer {
   margin-top: 2rem;
 }
 
-/* Tablette — écrans moins de 768px */
 @media (max-width: 768px) {
   header h1 {
     font-size: 1.5rem;
   }
 
   .projets .cards {
-    flex-direction: column;
+    grid-template-columns: 1fr;
   }
 
   .tags {
