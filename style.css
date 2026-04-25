@@ -395,11 +395,12 @@ body.dark footer {
 }
 
 .avatar-photo {
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
-  object-fit: cover;
+  object-fit: contain;
   border: 3px solid white;
   margin: 0 auto 1rem;
   display: block;
+ background: rgba(255,255,255,0.2);
 }
