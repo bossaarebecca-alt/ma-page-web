@@ -91,15 +91,13 @@ h2 {
 }
 
 .projets .cards {
-  display: flex;
+  display: grid;
+  grid-tempate-colums: repeat(2 , 1fr);
   gap: 16px;
-  flex-wrap: wrap;
 }
 
 .projets .carte {
-  flex: 1;
-  min-width: 200px;
-  max-width: calc(50% - 8px);
+  min-width: 0;
 }
 
 .carte h3 {
