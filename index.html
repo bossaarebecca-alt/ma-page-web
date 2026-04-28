@@ -3,155 +3,270 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rebecca - Portfolio</title>
+  <title>Rebecca Bossa — Développeuse Web</title>
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👩‍💻</text></svg>">
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
 <body>
 
+  <!-- NAVBAR -->
   <nav id="navbar">
-    <div class="nav-logo">Rebecca</div>
+    <div class="nav-logo"><span>&lt;/&gt;</span> Portfolio</div>
     <div class="nav-links">
       <a href="#apropos">À propos</a>
-      <a href="#competences">Compétences</a>
       <a href="#projets">Projets</a>
       <a href="#contact">Contact</a>
     </div>
-    <button id="toggle-theme" onclick="toggleTheme()">🌙</button>
+    <button id="toggle-theme" onclick="toggleTheme()">⚙️</button>
   </nav>
 
-  <header>
-     
-    <h1>Bonjour, je suis Rebecca</h1>
-    <p>Développeuse web en apprentissage</p>
-  </header>
-<img src="photo2.JPEG" alt="Rebecca" class="avatar-photo">
-  <section class="apropos" id="apropos">
-    <h2>À propos de moi</h2>
-    <p>J'apprends le développement web et GitHub. Voici ma première page publiée sur internet !</p>
+  <!-- HERO -->
+  <section id="accueil" class="hero">
+    <div class="stars"></div>
+    <div class="hero-content">
+      <div class="badge-disponible">● Disponible pour un stage</div>
+      <div class="avatar-container">
+        <img src="photo2.JPEG" alt="Rebecca" class="avatar-photo">
+      </div>
+      <h1 class="hero-nom">REBECCA</h1>
+      <h1 class="hero-prenom">Bossa</h1>
+      <p class="hero-titre">Développeuse Web Junior</p>
+      <div class="hero-btns">
+        <a href="#projets" class="btn-primary">Voir mes projets</a>
+        <a href="#contact" class="btn-secondary">Me contacter</a>
+      </div>
+      <div class="hero-socials">
+        <a href="https://github.com/bossaarebecca-alt" target="_blank" class="social-btn">🐙</a>
+        <a href="mailto:votre@email.com" class="social-btn">✉️</a>
+      </div>
+    </div>
   </section>
 
-  <section class="competences" id="competences">
-    <h2>Mes compétences</h2>
-    <div class="skills-list">
-      <div class="skill-item">
-        <div class="skill-header">
-          <span>HTML</span>
-          <span>80%</span>
+  <!-- STATS -->
+  <section class="stats-section">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon">🚀</div>
+          <div class="stat-num">5</div>
+          <div class="stat-label">Projets réalisés</div>
         </div>
-        <div class="skill-bar">
-          <div class="skill-fill" data-width="80"></div>
+        <div class="stat-card">
+          <div class="stat-icon">⚡</div>
+          <div class="stat-num">6+</div>
+          <div class="stat-label">Technologies</div>
         </div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-header">
-          <span>CSS</span>
-          <span>75%</span>
+        <div class="stat-card">
+          <div class="stat-icon">🎯</div>
+          <div class="stat-num">100%</div>
+          <div class="stat-label">Autodidacte</div>
         </div>
-        <div class="skill-bar">
-          <div class="skill-fill" data-width="75"></div>
-        </div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-header">
-          <span>Git & GitHub</span>
-          <span>85%</span>
-        </div>
-        <div class="skill-bar">
-          <div class="skill-fill" data-width="85"></div>
-        </div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-header">
-          <span>JavaScript</span>
-          <span>60%</span>
-        </div>
-        <div class="skill-bar">
-          <div class="skill-fill" data-width="60"></div>
-        </div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-header">
-          <span>VS Code</span>
-          <span>70%</span>
-        </div>
-        <div class="skill-bar">
-          <div class="skill-fill" data-width="70"></div>
+        <div class="stat-card">
+          <div class="stat-icon">😊</div>
+          <div class="stat-num">∞</div>
+          <div class="stat-label">% de passion</div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="projets" id="projets">
-    <h2>Mes projets</h2>
-    <div class="cards">
-      <div class="carte">
-        <h3>Premier dépôt GitHub</h3>
-        <p>Mon tout premier projet versionné avec Git.</p>
-        <a href="https://github.com/bossaarebecca-alt/premier-depot" target="_blank">Voir sur GitHub</a>
+  <!-- À PROPOS -->
+  <section id="apropos" class="section">
+    <div class="container">
+      <div class="section-label">— À PROPOS</div>
+      <h2 class="section-title">Qui suis-<span class="gradient-text">je</span> ?</h2>
+      <div class="apropos-grid">
+        <div class="apropos-img">
+          <img src="photo2.JPEG" alt="Rebecca">
+        </div>
+        <div class="apropos-text">
+          <h3>Développeuse passionnée<br>basée à <span class="gradient-text">Lomé, Togo</span></h3>
+          <p>Je suis Rebecca Bossa, étudiante en deuxième année d'informatique à Lomé, Togo. En parallèle de mes études, j'ai développé une passion pour le développement web moderne — apprenant par moi-même React, Git, GitHub et les réseaux Cisco pour aller encore plus loin que ce qu'on enseigne en cours.</p>
+          <p>Cette combinaison entre formation académique et apprentissage personnel m'a permis de créer et déployer <strong>5 projets en ligne</strong> — une application de transfert d'argent, une boutique e-commerce, un blog React et bien plus. Je cherche un stage pour mettre en pratique mes compétences dans un environnement professionnel.</p>
+          <div class="stack-title">Stack technique</div>
+          <div class="tech-tags">
+            <span class="tech-tag active">HTML/CSS</span>
+            <span class="tech-tag active">JavaScript</span>
+            <span class="tech-tag active">React</span>
+            <span class="tech-tag">Git</span>
+            <span class="tech-tag">Node.js</span>
+            <span class="tech-tag">Express</span>
+            <span class="tech-tag">Cisco</span>
+            <span class="tech-tag">VS Code</span>
+          </div>
+        </div>
       </div>
-      <div class="carte">
-        <h3>Ma page web</h3>
-        <p>Ma première page web publiée sur internet avec GitHub Pages.</p>
-        <a href="https://bossaarebecca-alt.github.io/ma-page-web/" target="_blank">Voir en ligne</a>
-      </div>
-      <div class="carte">
-        <h3>Mon App React</h3>
-        <p>Une application React avec Todo List, Météo et Blagues. Déployée sur Vercel.</p>
-        <a href="https://mon-app-react-two.vercel.app" target="_blank">Voir en ligne</a>
-        <a href="https://github.com/bossaarebecca-alt/mon-app-react" target="_blank">Voir sur GitHub</a>
-      </div>
-      <div class="carte">
-        <h3>Mon Blog Dev</h3>
-        <p>Blog React sur mon parcours d'apprentissage avec système de filtrage et recherche.</p>
-        <a href="https://mon-blog-seven.vercel.app" target="_blank">Voir en ligne</a>
-        <a href="https://github.com/bossaarebecca-alt/mon-blog" target="_blank">Voir sur GitHub</a>
-      </div>
-      <div class="carte">
-  <h3>TechShop — Boutique en ligne</h3>
-  <p>Boutique React avec panier d'achat, filtrage par catégorie et système de commande.</p>
-  <a href="TON-URL-VERCEL" target="_blank">Voir en ligne</a>
-  <a href="https://github.com/bossaarebecca-alt/ma-boutique" target="_blank">Voir sur GitHub</a>
-</div>
     </div>
   </section>
 
-  <section class="citation" id="citation">
-    <h2>Citation du jour</h2>
-    <div id="citation-box">
-      <p id="citation-texte">Chargement...</p>
-      <p id="citation-auteur"></p>
+  <!-- PROJETS -->
+  <section id="projets" class="section">
+    <div class="container">
+      <div class="section-label">— RÉALISATIONS</div>
+      <h2 class="section-title">Mes <span class="gradient-text">Projets</span></h2>
+      <div class="projets-grid">
+
+        <div class="projet-card">
+          <div class="projet-preview" style="background: linear-gradient(135deg, #003F87, #0066CC);">
+            <div style="color:white; text-align:center; padding:2rem;">
+              <div style="font-size:3rem">💸</div>
+              <div style="font-size:1.2rem; font-weight:bold; margin-top:0.5rem">ChadTransfer</div>
+              <div style="font-size:0.85rem; opacity:0.8">Transfert d'argent international</div>
+            </div>
+          </div>
+          <div class="projet-badge-type">FINTECH</div>
+          <h3>ChadTransfer</h3>
+          <p>Application de transfert d'argent du Tchad vers l'Afrique et l'Europe. Inscription, connexion, envoi en 3 étapes.</p>
+          <div class="projet-techs">
+            <span>React</span><span>Context API</span><span>React Router</span>
+          </div>
+          <div class="projet-btns">
+            <a href="https://tchad-transfer.vercel.app" target="_blank" class="btn-voir">👁 Voir</a>
+            <a href="https://github.com/bossaarebecca-alt/tchad-transfer" target="_blank" class="btn-code">🐙 Code</a>
+          </div>
+        </div>
+
+        <div class="projet-card">
+          <div class="projet-preview" style="background: linear-gradient(135deg, #1a1a2e, #16213e);">
+            <div style="color:white; text-align:center; padding:2rem;">
+              <div style="font-size:3rem">📱</div>
+              <div style="font-size:1.2rem; font-weight:bold; margin-top:0.5rem">TechShop</div>
+              <div style="font-size:0.85rem; opacity:0.8">Boutique de téléphones</div>
+            </div>
+          </div>
+          <div class="projet-badge-type">E-COMMERCE</div>
+          <h3>TechShop</h3>
+          <p>Boutique e-commerce de téléphones avec panier d'achat, filtrage par catégorie et système de commande.</p>
+          <div class="projet-techs">
+            <span>React</span><span>Context API</span><span>Vite</span>
+          </div>
+          <div class="projet-btns">
+            <a href="https://ma-boutique-nine.vercel.app" target="_blank" class="btn-voir">👁 Voir</a>
+            <a href="https://github.com/bossaarebecca-alt/ma-boutique" target="_blank" class="btn-code">🐙 Code</a>
+          </div>
+        </div>
+
+        <div class="projet-card">
+          <div class="projet-preview" style="background: linear-gradient(135deg, #E91E8C, #6C3FC5);">
+            <div style="color:white; text-align:center; padding:2rem;">
+              <div style="font-size:3rem">📝</div>
+              <div style="font-size:1.2rem; font-weight:bold; margin-top:0.5rem">Blog React</div>
+              <div style="font-size:0.85rem; opacity:0.8">Blog de développement</div>
+            </div>
+          </div>
+          <div class="projet-badge-type">WEB APP</div>
+          <h3>Blog React</h3>
+          <p>Blog avec filtrage par catégorie, recherche en temps réel et pages de détail dynamiques.</p>
+          <div class="projet-techs">
+            <span>React</span><span>React Router</span><span>Vite</span>
+          </div>
+          <div class="projet-btns">
+            <a href="https://mon-blog-seven.vercel.app" target="_blank" class="btn-voir">👁 Voir</a>
+            <a href="https://github.com/bossaarebecca-alt/mon-blog" target="_blank" class="btn-code">🐙 Code</a>
+          </div>
+        </div>
+
+        <div class="projet-card">
+          <div class="projet-preview" style="background: linear-gradient(135deg, #27AE60, #1a1a2e);">
+            <div style="color:white; text-align:center; padding:2rem;">
+              <div style="font-size:3rem">⚛️</div>
+              <div style="font-size:1.2rem; font-weight:bold; margin-top:0.5rem">App React</div>
+              <div style="font-size:0.85rem; opacity:0.8">Application multi-pages</div>
+            </div>
+          </div>
+          <div class="projet-badge-type">WEB APP</div>
+          <h3>App React</h3>
+          <p>Application multi-pages avec Todo List, Météo, Blagues API et mode sombre.</p>
+          <div class="projet-techs">
+            <span>React</span><span>Hooks</span><span>API Fetch</span>
+          </div>
+          <div class="projet-btns">
+            <a href="https://mon-app-react-two.vercel.app" target="_blank" class="btn-voir">👁 Voir</a>
+            <a href="https://github.com/bossaarebecca-alt/mon-app-react" target="_blank" class="btn-code">🐙 Code</a>
+          </div>
+        </div>
+
+      </div>
     </div>
-    <button onclick="nouvelleCitation()" class="btn-citation">Nouvelle citation</button>
   </section>
 
-  <section class="contact" id="contact">
-    <h2>Me contacter</h2>
-    <p>Tu veux échanger ou collaborer ?</p>
-    <a href="https://github.com/bossaarebecca-alt" target="_blank" class="btn">Mon profil GitHub</a>
-    <div class="form-contact">
-      <div class="form-group">
-        <label for="nom">Ton nom</label>
-        <input type="text" id="nom" placeholder="Ex: Marie Dupont">
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+    <div class="container">
+      <div class="section-label">— CONTACT</div>
+      <h2 class="section-title">Travaillons <span class="gradient-text">ensemble</span></h2>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <p>Tu as un projet en tête ? N'hésite pas à me contacter, je serai ravie d'échanger.</p>
+          <div class="contact-items">
+            <div class="contact-item">
+              <div class="contact-icon-box">✉️</div>
+              <div>
+                <div class="contact-label">EMAIL</div>
+                <div class="contact-value">bossaarebecca@gmail.com</div>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon-box">📍</div>
+              <div>
+                <div class="contact-label">LOCALISATION</div>
+                <div class="contact-value">Lomé, Togo 🇹🇩</div>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon-box">🐙</div>
+              <div>
+                <div class="contact-label">GITHUB</div>
+                <div class="contact-value">bossaarebecca-alt</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="contact-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Nom complet</label>
+              <input type="text" id="nom" placeholder="Votre nom">
+            </div>
+            <div class="form-group">
+              <label>Email</label>
+              <input type="email" id="email" placeholder="votre@email.com">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Sujet</label>
+            <input type="text" id="sujet" placeholder="Objet du message">
+          </div>
+          <div class="form-group">
+            <label>Message</label>
+            <textarea id="message" rows="5" placeholder="Décrivez votre projet..."></textarea>
+          </div>
+          <button onclick="envoyerMessage()" class="btn-primary" style="width:100%">Envoyer le message</button>
+          <p id="confirmation" style="display:none; margin-top:1rem; color:#27AE60; font-weight:bold; text-align:center;">
+            ✅ Message envoyé avec succès !
+          </p>
+        </div>
       </div>
-      <div class="form-group">
-        <label for="email">Ton email</label>
-        <input type="email" id="email" placeholder="Ex: marie@exemple.com">
-      </div>
-      <div class="form-group">
-        <label for="message">Ton message</label>
-        <textarea id="message" rows="4" placeholder="Bonjour Rebecca..."></textarea>
-      </div>
-      <button onclick="envoyerMessage()" class="btn-citation">Envoyer le message</button>
-      <p id="confirmation" style="display:none; margin-top:1rem; color:#27500A; font-weight:bold;">
-        Merci ! Ton message a bien été envoyé.
-      </p>
     </div>
   </section>
 
+  <!-- FOOTER -->
   <footer>
-    <p>Fait avec passion par Rebecca — 2026</p>
+    <div class="container">
+      <div class="footer-logo"><span>&lt;/&gt;</span> Rebecca Bossa</div>
+      <p>Développeuse Web Junior — Lomé, Togo 🇹🇩</p>
+      <div class="footer-links">
+        <a href="#accueil">Accueil</a>
+        <a href="#apropos">À propos</a>
+        <a href="#projets">Projets</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <p class="footer-copy">© 2026 Rebecca Bossa. Fait avec ❤️</p>
+    </div>
   </footer>
+
+  <button class="scroll-top" onclick="window.scrollTo({top:0, behavior:'smooth'})">↑</button>
 
   <script src="script.js"></script>
 </body>

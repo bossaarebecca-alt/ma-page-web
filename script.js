@@ -1,30 +1,24 @@
-let clics = 0;
+// ===== EMAILJS =====
+const SERVICE_ID = 'service_5m33dhm'
+const TEMPLATE_ID = 'template_oj29bk7'
+const PUBLIC_KEY = 'etGAtBfBOoUh-fpTT'
 
-function afficherMessage() {
-  const message = document.getElementById("message");
-  const bouton = document.getElementById("btn-message");
-  const compteur = document.getElementById("compteur");
-
-  clics = clics + 1;
-  compteur.textContent = clics + " clics";
-
-  if (message.style.display === "none") {
-    message.style.display = "block";
-    bouton.textContent = "Cacher le message";
-  } else {
-    message.style.display = "none";
-    bouton.textContent = "Clique ici !";
-  }
-}
-window.addEventListener("scroll", function() {
-  const navbar = document.getElementById("navbar");
+// ===== NAVBAR SCROLL =====
+window.addEventListener('scroll', function() {
+  const navbar = document.getElementById('navbar')
   if (window.scrollY > 50) {
-    navbar.classList.add("scrolled");
+    navbar.style.background = 'rgba(10, 10, 15, 0.95)'
   } else {
-    navbar.classList.remove("scrolled");
+    navbar.style.background = 'rgba(10, 10, 15, 0.85)'
   }
-});
+})
 
+// ===== MODE SOMBRE =====
+function toggleTheme() {
+  document.body.classList.toggle('dark')
+}
+
+// ===== CITATIONS =====
 const citations = [
   { content: "Le succès c'est d'aller d'échec en échec sans perdre son enthousiasme.", author: "Winston Churchill" },
   { content: "La vie c'est comme une bicyclette, il faut avancer pour ne pas perdre l'équilibre.", author: "Albert Einstein" },
@@ -32,62 +26,57 @@ const citations = [
   { content: "Croyez en vous et tout devient possible.", author: "Inconnu" },
   { content: "Chaque expert a d'abord été un débutant.", author: "Helen Hayes" },
   { content: "Le code est comme l'humour. Quand on doit l'expliquer, c'est mauvais signe.", author: "Cory House" },
-  { content: "Apprendre sans réfléchir est inutile. Réfléchir sans apprendre est dangereux.", author: "Confucius" },
-];
+]
 
 function nouvelleCitation() {
-  const texte = document.getElementById("citation-texte");
-  const auteur = document.getElementById("citation-auteur");
-
-  const index = Math.floor(Math.random() * citations.length);
-  const citation = citations[index];
-
-  texte.textContent = '"' + citation.content + '"';
-  auteur.textContent = "— " + citation.author;
+  const texte = document.getElementById('citation-texte')
+  const auteur = document.getElementById('citation-auteur')
+  if (!texte || !auteur) return
+  const index = Math.floor(Math.random() * citations.length)
+  texte.textContent = '"' + citations[index].content + '"'
+  auteur.textContent = '— ' + citations[index].author
 }
 
-nouvelleCitation();
-function toggleTheme() {
-  const body = document.body;
-  const bouton = document.getElementById("toggle-theme");
-
-  body.classList.toggle("dark");
-
-  if (body.classList.contains("dark")) {
-    bouton.textContent = "☀️";
-  } else {
-    bouton.textContent = "🌙";
-  }
-}
-function animerBarres() {
-  const barres = document.querySelectorAll('.skill-fill');
-  barres.forEach(function(barre) {
-    const largeur = barre.getAttribute('data-width');
-    barre.style.width = largeur + '%';
-  });
+if (document.getElementById('citation-texte')) {
+  nouvelleCitation()
 }
 
-window.addEventListener('scroll', function() {
-  const section = document.getElementById('competences');
-  const position = section.getBoundingClientRect().top;
-  if (position < window.innerHeight - 100) {
-    animerBarres();
-  }
-});
-
+// ===== FORMULAIRE CONTACT AVEC EMAILJS =====
 function envoyerMessage() {
-  const nom = document.getElementById("nom").value.trim();
-  const email = document.getElementById("email").value.trim();
-  const message = document.getElementById("message").value.trim();
-  const confirmation = document.getElementById("confirmation");
+  const nom = document.getElementById('nom').value.trim()
+  const email = document.getElementById('email').value.trim()
+  const sujet = document.getElementById('sujet') ? document.getElementById('sujet').value.trim() : ''
+  const message = document.getElementById('message').value.trim()
+  const confirmation = document.getElementById('confirmation')
+  const btn = document.querySelector('.contact-form .btn-primary')
 
-  if (nom === "" || email === "" || message === "") {
-    alert("Merci de remplir tous les champs !");
-    return;
+  if (!nom || !email || !message) {
+    alert('Veuillez remplir tous les champs !')
+    return
   }
 
-  confirmation.style.display = "block";
-  document.getElementById("nom").value = "";
-  document.getElementById("email").value = "";
-  document.getElementById("message").value = "";
+  btn.textContent = 'Envoi en cours...'
+  btn.disabled = true
+
+  emailjs.send(SERVICE_ID, TEMPLATE_ID, {
+    from_name: nom,
+    from_email: email,
+    subject: sujet,
+    message: message
+  }, PUBLIC_KEY)
+  .then(function() {
+    confirmation.style.display = 'block'
+    document.getElementById('nom').value = ''
+    document.getElementById('email').value = ''
+    if (document.getElementById('sujet')) document.getElementById('sujet').value = ''
+    document.getElementById('message').value = ''
+    btn.textContent = 'Envoyer le message'
+    btn.disabled = false
+  })
+  .catch(function(error) {
+    alert('Erreur lors de l\'envoi. Réessaie !')
+    console.error(error)
+    btn.textContent = 'Envoyer le message'
+    btn.disabled = false
+  })
 }
